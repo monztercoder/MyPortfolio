@@ -1,0 +1,122 @@
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: $white;
+  overflow-x: hidden;
+  font-family: $font-primary;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  transition: $transition;
+
+  i {
+    color: hsl(210, 55%, 15%);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+h1,
+h2
+{
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+
+}
+
+section {
+  border-radius: $radius / 8;
+}
+
+input {
+  place-self: center;
+  color: black;
+  font-size: 1.2rem;
+  width: 80%;
+  border:0;
+  outline: none;
+  border-radius: $radius / 10;
+  padding: .5em 1em;
+  transition: 0.3s ;
+
+  &::placeholder {
+    font-size: 1.2rem;
+    color: gray;
+  }
+}
+
+.btn {
+  text-transform: capitalize;
+  padding: .3em .9em;
+  font-size: 1.2rem;
+  color: $clrPrimary;
+  transition: $transition ;
+  cursor: pointer;
+  outline: none;
+  border:0;
+  border-radius: $radius / 10;
+  
+}
+
+section:not(.main) {
+  width: clamp(18rem,700px,70%);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+
+  }

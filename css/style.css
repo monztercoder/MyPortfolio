@@ -1,0 +1,807 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+a i {
+  color: #11263b;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+h1,
+h2 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+section {
+  border-radius: 6.25px;
+}
+
+input {
+  place-self: center;
+  color: black;
+  font-size: 1.2rem;
+  width: 80%;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  padding: .5em 1em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+input:-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+input::-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+input::placeholder {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.btn {
+  text-transform: capitalize;
+  padding: .3em .9em;
+  font-size: 1.2rem;
+  color: rgba(17, 38, 59, 0.8);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+
+section:not(.main) {
+  width: clamp(18rem, 700px, 70%);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 78px;
+  background: rgba(17, 16, 30, 0.712);
+  padding: .2rem 1rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* We will be adding .active class to any element we want to modify when toggling the sidebar*/
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar .logo_content .logo {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.logo_content .logo img {
+  margin-right: 5px;
+}
+
+.logo_content .logo_name {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: .9em;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+  position: absolute;
+  left: 90%;
+}
+
+.sidebar .nav_list {
+  margin-top: 1.2rem;
+  list-style-type: none;
+}
+
+.nav_list li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 10px 5px;
+  line-height: 50px;
+}
+
+.nav_list li .tooltip {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 35px;
+  width: 122px;
+  background: white;
+  color: #333;
+  border-radius: 6px;
+  line-height: 35px;
+  text-align: center;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.233);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.233);
+  -webkit-transition: 0s;
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .nav_list li .tooltip {
+  display: none;
+}
+
+.nav_list li:hover .tooltip {
+  top: 50%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.nav_list li input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background: rgba(29, 27, 49, 0.438);
+  padding-left: 50px;
+  font-size: 1.4em;
+  color: white;
+}
+
+.nav_list li:first-child {
+  margin-bottom: 1.2em;
+}
+
+.nav_list a {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.nav_list a:hover {
+  color: rgba(17, 16, 30, 0.712);
+  background: #a89f9f;
+  border-radius: 12px;
+}
+
+.nav_list li img {
+  min-width: 2em;
+  margin-right: 1rem;
+  line-height: 50px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.nav_list li .bx-search {
+  position: absolute;
+  z-index: 100;
+  top: 9px;
+  left: 5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.nav_list li .bx-search:hover {
+  background: #a89f9f;
+  color: rgba(29, 27, 49, 0.438);
+}
+
+.sidebar .links_name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .links_name {
+  opacity: 1;
+}
+
+.profile_content {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(29, 27, 49, 0.438);
+}
+
+.profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+}
+
+.profile_content .profile .profile-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.sidebar.active .profile_content .profile .profile-details {
+  opacity: 1;
+}
+
+.profile-details img {
+  height: 45px;
+  width: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+
+.profile-details .name_job {
+  margin-left: .8em;
+}
+
+.profile #logout {
+  position: absolute;
+  left: 40%;
+  bottom: 10px;
+  line-height: 50px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  cursor: pointer;
+}
+
+.sidebar.active #logout {
+  left: 84%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+canvas {
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.hero {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right top, from(#e5f7e1), color-stop(#c0ecf9), to(#d1d7f8));
+  background: linear-gradient(to right, #e5f7e1, #c0ecf9, #d1d7f8);
+}
+
+.header__intro {
+  margin-top: 2.3rem;
+  padding: 0 1.4rem;
+}
+
+.header__btn {
+  display: inline-block;
+  background: #84bcf0;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.header__btn i {
+  margin-left: .5em;
+}
+
+.header__btn:hover {
+  color: #87bdf8;
+  background: rgba(17, 38, 59, 0.8);
+}
+
+.header__btn:hover i {
+  color: #87bdf8;
+}
+
+.header .highlight {
+  color: #84bcf0;
+}
+
+.main {
+  width: 100%;
+  padding: 1rem;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+
+.main__title {
+  text-align: left;
+  margin: 1.5rem;
+}
+
+.main__container {
+  margin: 1.5rem;
+  width: 60%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main__container .card {
+  padding: 1rem;
+  background: rgba(17, 38, 59, 0.8);
+  border-radius: 5px;
+  -webkit-transform: rotate(8deg);
+          transform: rotate(8deg);
+}
+
+.main__container .card h2 {
+  letter-spacing: .1rem;
+  color: #87bdf8;
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.main__container .card svg {
+  width: 10rem;
+  height: 8rem;
+}
+
+.projects {
+  background-color: rgba(17, 38, 59, 0.8);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3em;
+  padding-bottom: 2rem;
+}
+
+.projects .project {
+  background-color: #ffffff;
+  color: #87bdf8;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.projects .project .banner {
+  width: 100%;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  border-radius: 5px;
+}
+
+.projects .project .banner .link {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  gap: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+
+.projects .project .banner .link:hover {
+  opacity: 1;
+}
+
+.projects .project .banner .link a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #84bcf0;
+  background-color: #ffffff;
+  padding: .2rem .5rem;
+  border-radius: 50px;
+}
+
+.projects .project .banner .link a:hover {
+  color: rgba(17, 38, 59, 0.8);
+}
+
+.projects .project .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.projects .project .tags .tag {
+  background-color: rgba(17, 38, 59, 0.8);
+  padding: .2rem 1rem;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+
+.projects .project .info {
+  font-size: 1.3rem;
+}
+
+.projects .project .info span {
+  color: rgba(17, 38, 59, 0.8);
+  font-weight: bold;
+}
+
+.blogs {
+  background: rgba(17, 38, 59, 0.8);
+  width: 55%;
+  margin: 2rem 1.3rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3em;
+  padding-bottom: 2em;
+}
+
+.blogs .blog {
+  width: 80%;
+  height: 80%;
+  color: #333;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.blogs .blog .creds {
+  margin-top: 1.5rem;
+  gap: .8rem;
+  padding-left: 1.4rem;
+}
+
+.blogs .blog .creds .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.blogs .blog p {
+  margin-top: 1.5rem;
+  padding: 0 2rem;
+}
+
+.blogs .blog h2 {
+  margin-top: 1.5rem;
+  padding: 0 .8rem;
+}
+
+.blogs .blog a {
+  color: #87bdf8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blogs .blog a:hover {
+  text-decoration: underline;
+}
+
+.blogs .blog .creds-btm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+
+.blogs .blog .creds-btm .link {
+  margin-right: .7rem;
+}
+
+.contact {
+  background-color: rgba(17, 38, 59, 0.8);
+  margin-left: 1.5rem;
+}
+
+.contact h1 {
+  color: #84bcf0;
+}
+
+.contact p {
+  padding: 1.5rem;
+}
+
+.contact form {
+  width: 100%;
+  padding: 1rem;
+}
+
+.contact .row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact .row .input50 {
+  width: 50%;
+  margin: 0 10px;
+}
+
+.contact .row .input100 {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.contact .row input, .contact .row textarea {
+  width: 100%;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 10px 0;
+  resize: none;
+}
+
+.contact .row input:focus, .contact .row textarea:focus {
+  -webkit-box-shadow: 2px 5px 10px -5px #84bcf0;
+          box-shadow: 2px 5px 10px -5px #84bcf0;
+}
+
+.contact .row textarea {
+  height: 8rem;
+}
+
+.contact .row .form-btn {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  margin: auto;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact .row .form-btn:hover {
+  background: #87bdf8;
+}
+
+.footer {
+  overflow: hidden;
+  margin-top: 5rem;
+  font-family: "Ubuntu Condensed", sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  color: #11263b;
+}
+
+.footer .social-icons {
+  margin-right: 2rem;
+  gap: 2.5rem;
+}
+
+.footer .social-icons a {
+  display: inline-block;
+  font-size: 2rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.footer .social-icons a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.footer .top-btn {
+  font-size: 3.5rem;
+  -webkit-animation: shake 0.3s infinite forwards;
+          animation: shake 0.3s infinite forwards;
+  cursor: pointer;
+}
+
+.footer .wave {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .row .input50 {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .blogs {
+    width: 85%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

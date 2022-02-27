@@ -1,0 +1,410 @@
+@import 'variables';
+@import 'defaults';
+@import 'nav';
+
+canvas {
+    position: fixed;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
+   
+  .hero {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+
+  .logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: $Gradient;
+  }
+
+  // Header
+  .header {
+
+    &__intro {
+      margin-top: 2.3rem;
+      padding: 0 1.4rem;
+
+    }
+    
+    &__btn {
+      display: inline-block;
+      background: $clrSecondary;
+      font-family: $font-primary;
+      font-weight: 600;
+      margin-top: 1rem;
+      
+        i {
+            margin-left: .5em;
+        }
+
+        &:hover {
+          color: $textPrimary;
+          background: $clrPrimary;
+      
+          i {
+            color: $textPrimary;
+          }
+      
+      }
+      }
+
+    .highlight {
+        color: $clrSecondary;
+        
+      }
+    
+}
+      
+// Main Section 
+  .main {
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem 0;
+    gap: 1.5rem;
+    // border: 5px solid blanchedalmond;
+    
+    &__title {
+        text-align: left;
+        margin: 1.5rem;
+      }
+
+      &__container {
+        margin: 1.5rem;
+        width: 60%;
+        align-items:flex-start;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+
+        .card {
+            padding: 1rem;
+            background: $clrPrimary;
+            border-radius: $radius / 10;
+            transform: rotate(8deg);
+
+            h2 {
+                letter-spacing: .1rem;
+                color:$textPrimary;
+                font-family: $font-secondary;
+              }
+
+              svg {
+                width: 10rem;
+                height: 8rem;
+              }
+          }
+      }
+
+  }
+
+  // Projects
+
+  .projects {
+    background-color: $clrPrimary;
+    flex-direction: column;
+    gap: 3em;
+    padding-bottom: 2rem;
+
+    .project {
+      background-color: $white;
+      color: $textPrimary;
+      flex-direction: column;
+      gap: 1.5em;
+      width: 90%;
+      height: 90%;
+      border-radius: $radius / 10;
+
+      .banner {
+        width: 100%;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        border-radius: $radius / 10;
+
+        .link {
+          border-radius: $radius / 10;
+          background-color: rgba(0, 0, 0, 0.7);
+          width: 100%;
+          height: 100%;
+          gap: 1.5rem;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.2s ease-in;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: $clrSecondary;
+            background-color: $white;
+            padding: .2rem .5rem;
+            border-radius: $radius;
+            
+            &:hover {
+              color: $clrPrimary;
+            }
+          }
+        }
+      }
+
+      .tags {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        overflow-wrap: break-word;
+
+        .tag {
+          background-color: $clrPrimary;
+          padding: .2rem 1rem;
+          font-family: $font-secondary;
+          text-transform: uppercase;
+          // white-space: nowrap;
+          border-radius: $radius;
+        }
+      }
+
+      .info {
+        font-size: 1.3rem;
+
+        span {
+          color: $clrPrimary;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // Blog
+  .blogs {
+    background: $clrPrimary;
+    width: 55%;
+    margin: 2rem 1.3rem;
+    flex-direction: column;
+    gap: 3em;
+    padding-bottom: 2em;
+
+    .blog {
+      width: 80%;
+      height: 80%;
+      color: #333;
+      background: $white;
+      border-radius: $radius / 10;
+
+      .creds {
+        // border: 2px solid red;
+        margin-top: 1.5rem;
+        gap: .8rem;
+        padding-left: 1.4rem;
+
+        .icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+}
+      }
+
+      p {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+      }
+
+      h2 {
+        margin-top: 1.5rem;
+        padding: 0 .8rem;
+      }
+
+      a {
+        color: $textPrimary;
+        font-weight: 600;
+        text-decoration: none;
+
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .creds-btm {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2rem;
+        margin: 2rem 0;
+
+        .link {
+          margin-right: .7rem ;
+        }
+        
+      }
+    }
+  }
+  
+  // Contact Form
+  .contact {
+    background-color: $clrPrimary;
+    margin-left: 1.5rem;
+      
+     h1 {
+       color: $clrSecondary;
+     }
+
+     p {
+      padding: 1.5rem;
+
+     }
+    
+    form {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+      .row {
+          width: 100%;
+          display: flex;
+  
+          .input50 {
+              width: 50%;
+              margin: 0 10px;
+          }
+  
+          .input100 {
+              width: 100%;
+              margin: 0 10px;
+          }
+  
+          input,textarea {
+              width: 100%;
+              font-family: $font-primary;
+              padding: 10px;
+              border-radius: $radius / 10;
+              outline: none;
+              font-size: 1rem;
+              font-weight: 300;
+              margin: 10px 0;
+              resize: none;
+
+              &:focus {
+                box-shadow: 2px 5px 10px -5px $clrSecondary;
+              }
+  
+          }
+
+          
+  
+          textarea {
+              height: 8rem;
+          }
+  
+          .form-btn {
+            font-family: $font-primary;
+            margin: auto;
+            font-weight: 700;
+            text-transform: uppercase;
+          
+            &:hover {
+              background: $textPrimary;
+            }
+          }
+  
+      }
+  }
+
+  
+  .footer {
+    overflow: hidden;
+    margin-top: 5rem;
+    font-family: "Ubuntu Condensed", sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    color: hsl(210, 55%, 15%);
+
+
+    .social-icons {
+        margin-right: 2rem;
+        gap: 2.5rem;
+
+        a {
+            display: inline-block;
+            font-size: 2rem;
+            transform-style: preserve-3d;
+            transition: all 0.3s linear;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+          }
+    }
+
+      .top-btn {
+        font-size: 3.5rem;
+        animation: shake 0.3s infinite forwards;
+        cursor: pointer;
+    }
+
+    .wave {
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        top:0;
+        height: 100%;
+        width: 100%;
+    }
+
+  }
+  
+  
+  @keyframes shake {
+    0%, 100% {
+      
+     transform: translateY(-8px);
+    }
+
+    90% {
+      
+      transform: translateY(0);
+    }
+  }
+
+
+  @media (max-width:600px) {
+
+
+    .row {
+      flex-wrap: wrap;
+      
+      .input50 {
+          flex-grow: 1;
+      }
+  }
+
+  .blogs {
+    width: 85%;
+  }
+  
+}
