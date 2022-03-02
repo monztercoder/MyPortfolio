@@ -68,10 +68,6 @@ p {
 
 }
 
-section {
-  border-radius: $radius / 8;
-}
-
 input {
   place-self: center;
   color: black;
@@ -102,10 +98,11 @@ input {
   
 }
 
-section:not(.main) {
+section {
   width: clamp(18rem,700px,70%);
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-block: 4rem;
+  border-radius: $radius / 8;
+
 }
 
   @media screen and (min-width: 800px) {

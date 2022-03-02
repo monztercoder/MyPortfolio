@@ -23,62 +23,11 @@ canvas {
   
   }
   
-
-  .logo {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    background: $Gradient;
-  }
-
-  // Header
-  .header {
-
-    &__intro {
-      margin-top: 2.3rem;
-      padding: 0 1.4rem;
-
-    }
-    
-    &__btn {
-      display: inline-block;
-      background: $clrSecondary;
-      font-family: $font-primary;
-      font-weight: 600;
-      margin-top: 1rem;
-      
-        i {
-            margin-left: .5em;
-        }
-
-        &:hover {
-          color: $textPrimary;
-          background: $clrPrimary;
-      
-          i {
-            color: $textPrimary;
-          }
-      
-      }
-      }
-
-    .highlight {
-        color: $clrSecondary;
-        
-      }
-    
-}
-      
+ 
 // Main Section 
   .main {
-    width: 100%;
     padding: 1rem;
-    margin: 2rem 0;
     gap: 1.5rem;
-    // border: 5px solid blanchedalmond;
     
     &__title {
         text-align: left;
@@ -86,22 +35,20 @@ canvas {
       }
 
       &__container {
-        margin: 1.5rem;
-        width: 60%;
-        align-items:flex-start;
-        flex-direction: column;
+        width: 100%;
+        background-color: $clrPrimary;
+        padding: 1rem;
+        margin-left: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
-        padding: 2rem;
 
         .card {
-            padding: 1rem;
-            background: $clrPrimary;
-            border-radius: $radius / 10;
             transform: rotate(8deg);
 
             h2 {
                 letter-spacing: .1rem;
-                color:$textPrimary;
+                color:$white;
                 font-family: $font-secondary;
               }
 
@@ -121,15 +68,16 @@ canvas {
     flex-direction: column;
     gap: 3em;
     padding-bottom: 2rem;
+    margin-left: 1.5rem;
 
     .project {
       background-color: $white;
-      color: $textPrimary;
       flex-direction: column;
       gap: 1.5em;
       width: 90%;
       height: 90%;
       border-radius: $radius / 10;
+      color: $textPrimary;
 
       .banner {
         width: 100%;
@@ -158,7 +106,7 @@ canvas {
             font-weight: 600;
             color: $clrSecondary;
             background-color: $white;
-            padding: .2rem .5rem;
+            padding: .2rem 1rem;
             border-radius: $radius;
             
             &:hover {
@@ -175,13 +123,14 @@ canvas {
         justify-content: center;
         margin-bottom: 1.5rem;
         overflow-wrap: break-word;
+        color: $white;
+
 
         .tag {
           background-color: $clrPrimary;
           padding: .2rem 1rem;
           font-family: $font-secondary;
           text-transform: uppercase;
-          // white-space: nowrap;
           border-radius: $radius;
         }
       }
@@ -200,11 +149,14 @@ canvas {
   // Blog
   .blogs {
     background: $clrPrimary;
-    width: 55%;
-    margin: 2rem 1.3rem;
+    margin: 0 1.5rem;
     flex-direction: column;
     gap: 3em;
     padding-bottom: 2em;
+
+    h2 {
+      padding: 0 .5rem;
+    }
 
     .blog {
       width: 80%;
@@ -214,7 +166,6 @@ canvas {
       border-radius: $radius / 10;
 
       .creds {
-        // border: 2px solid red;
         margin-top: 1.5rem;
         gap: .8rem;
         padding-left: 1.4rem;
@@ -393,7 +344,6 @@ canvas {
 
 
   @media (max-width:600px) {
-
 
     .row {
       flex-wrap: wrap;
