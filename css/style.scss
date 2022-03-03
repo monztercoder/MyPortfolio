@@ -128,7 +128,7 @@ canvas {
 
         .tag {
           background-color: $clrPrimary;
-          padding: .2rem 1rem;
+          padding: .4rem 1rem;
           font-family: $font-secondary;
           text-transform: uppercase;
           border-radius: $radius;
@@ -292,6 +292,7 @@ canvas {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    bottom: 0;
     color: hsl(210, 55%, 15%);
 
 

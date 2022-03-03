@@ -471,7 +471,7 @@ canvas {
 
 .projects .project .tags .tag {
   background-color: rgba(23, 41, 58, 0.7);
-  padding: .2rem 1rem;
+  padding: .4rem 1rem;
   font-family: "Ubuntu Condensed", sans-serif;
   text-transform: uppercase;
   border-radius: 50px;
@@ -640,6 +640,7 @@ canvas {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  bottom: 0;
   color: #11263b;
 }
 
