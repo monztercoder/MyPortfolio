@@ -93,17 +93,19 @@ input {
   transition: $transition ;
   cursor: pointer;
   outline: none;
+  letter-spacing: .1rem;
   border:0;
   border-radius: $radius / 10;
   
 }
 
 section {
-  width: clamp(18rem,700px,70%);
+  width: clamp(18rem,800px,70%);
   margin-block: 4rem;
   border-radius: $radius / 8;
 
 }
+
 
   @media screen and (min-width: 800px) {
     h1 {

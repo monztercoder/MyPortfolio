@@ -84,7 +84,7 @@
 // mobile Navigation
 .mobi-nav {
     position: fixed;
-    inset:4rem 0 0 40%;
+    inset:0 0 0 40%;
     z-index: 90;
     display: none;
     justify-content: center;
@@ -129,27 +129,8 @@
   // Header
   .header {
 
-    margin-top: 4rem;
+    margin-top: 10rem;
 
-    &__btn {
-        display: inline-block;
-        background-color: $clrSecondary;
-        font-weight: 500;
-        margin-top: 1em;
-
-        span {
-        margin-right: .5em;
-
-        }
-        img {
-            display: inline-block;
-            width: 1.2rem;
-        }
-
-        &:hover {
-            background-color: $white;
-        }
-    }
     &__intro {
       margin-top: 2.3rem;
       padding: 0 1.4rem;
@@ -161,6 +142,46 @@
         color: $clrSecondary;
         
       }
+    .btn-container {
+        width: 100%;
+        justify-content: center;
+        margin-top: 2em;
+        gap: 2.5em;
+
+        a {
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(45deg, $red, #ade99f, #c0ecf9);
+            background-position: left;
+            background-size: 400%;
+            font-weight: 500;
+            color: white;
+    
+            img {
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: .2rem;
+            }
+
+            &:hover {
+                background-position: right;
+            }
+
+        }
+
+        .coffee-btn {
+            background:linear-gradient(45deg, $yellow, #d1d7f8, #e5f7e1);
+            background-position: left;
+            background-size: 400%;
+            color: black; 
+
+            
+        }
+    }
+
     
 }
      

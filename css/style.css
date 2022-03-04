@@ -109,12 +109,13 @@ input::placeholder {
   transition: all 0.3s linear;
   cursor: pointer;
   outline: none;
+  letter-spacing: .1rem;
   border: 0;
   border-radius: 5px;
 }
 
 section {
-  width: clamp(18rem, 700px, 70%);
+  width: clamp(18rem, 800px, 70%);
   margin-block: 4rem;
   border-radius: 6.25px;
 }
@@ -217,7 +218,7 @@ section {
 
 .mobi-nav {
   position: fixed;
-  inset: 4rem 0 0 40%;
+  inset: 0 0 0 40%;
   z-index: 90;
   display: none;
   -webkit-box-pack: center;
@@ -273,27 +274,7 @@ section {
 }
 
 .header {
-  margin-top: 4rem;
-}
-
-.header__btn {
-  display: inline-block;
-  background-color: #84bcf0;
-  font-weight: 500;
-  margin-top: 1em;
-}
-
-.header__btn span {
-  margin-right: .5em;
-}
-
-.header__btn img {
-  display: inline-block;
-  width: 1.2rem;
-}
-
-.header__btn:hover {
-  background-color: #ffffff;
+  margin-top: 10rem;
 }
 
 .header__intro {
@@ -303,6 +284,50 @@ section {
 
 .header .highlight {
   color: #84bcf0;
+}
+
+.header .btn-container {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2em;
+  gap: 2.5em;
+}
+
+.header .btn-container a {
+  height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: linear-gradient(45deg, #FA0F00, #ade99f, #c0ecf9);
+  background-position: left;
+  background-size: 400%;
+  font-weight: 500;
+  color: white;
+}
+
+.header .btn-container a img {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: .2rem;
+}
+
+.header .btn-container a:hover {
+  background-position: right;
+}
+
+.header .btn-container .coffee-btn {
+  background: linear-gradient(45deg, #FFDD00, #d1d7f8, #e5f7e1);
+  background-position: left;
+  background-size: 400%;
+  color: black;
 }
 
 @media (max-width: 700px) {
@@ -502,7 +527,7 @@ canvas {
 }
 
 .blogs .blog {
-  width: 80%;
+  width: 90%;
   height: 80%;
   color: #333;
   background: #ffffff;
@@ -710,9 +735,6 @@ canvas {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-  }
-  .blogs {
-    width: 85%;
   }
 }
 /*# sourceMappingURL=style.css.map */

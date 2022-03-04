@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/e718856e13.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZYC9Q4WB6"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8ZYC9Q4WB6');
+    </script>
   </head>
   <body>
   
@@ -84,7 +93,13 @@
             <h1>Hey, I’m Aditya </h1>
             <h3>I’m a <span class="highlight">Front-End Developer</span> <br> with some Experience in <span class="highlight">Backend Development</span> <br> and <span class="highlight">UI/UX Design</span></h3>
             <h4>and I Love Making Awesome, Useful Web Applications</h4>
-            <a href="/Resume.pdf" download="Resume.pdf" class="btn header__btn"><span> my resume</span> <img src="/icon.ico" alt="pdf icon"></a>
+            <div class="flex btn-container">
+                <a href="/Resume.pdf" download="Resume.pdf" class="btn"> my resume <img src="Images/pdf.png" alt="pdf icon"></a>
+                <a href="https://www.buymeacoffee.com/thedevguy" target="_blank_" class="btn coffee-btn">
+                    Buy me coffee
+                    <img src="/Images/coffee.svg" alt="coffee-icon">
+                </a>
+            </div>
       </div>
 
   </header>
