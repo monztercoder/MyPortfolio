@@ -146,10 +146,10 @@
         width: 100%;
         justify-content: center;
         margin-top: 2em;
-        gap: 2.5em;
+        gap: 1rem;
+        flex-wrap: wrap;
 
         a {
-            height: 2em;
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -204,4 +204,5 @@
 .mobi-nav {
     display: block;
 }
+
 }
