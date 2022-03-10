@@ -196,10 +196,12 @@ section {
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   padding-bottom: .6rem;
+  transition: all 0.3s linear;
 }
 
 .nav ul li a:hover {
-  font-weight: 500;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
 }
 
 .nav ul li a.active::before {
@@ -259,6 +261,8 @@ section {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 500;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .mobi-nav ul a:hover {

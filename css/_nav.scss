@@ -52,9 +52,10 @@
             position: relative;
             transition: $transition;
             padding-bottom: .6rem;
+            transition: $transition;
 
             &:hover {
-                font-weight: 500;
+                transform: rotate(10deg);
             }
 
             &.active {
@@ -111,6 +112,7 @@
             color: $white;
             font-size: 1.2rem;
             font-weight: 500;
+            transition: $transition;
 
             &:hover {
                 color: #333;
