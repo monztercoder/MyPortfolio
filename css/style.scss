@@ -74,8 +74,7 @@ canvas {
       background-color: $white;
       flex-direction: column;
       gap: 1.5em;
-      width: 90%;
-      height: 90%;
+      width: 80%;
       border-radius: $radius / 10;
       color: $textPrimary;
 
@@ -159,7 +158,7 @@ canvas {
     }
 
     .blog {
-      width: 90%;
+      width: 80%;
       height: 80%;
       color: #333;
       background: $white;
@@ -216,20 +215,22 @@ canvas {
   
   // Contact Form
   .contact {
+    flex-direction: column;
     background-color: $clrPrimary;
     margin-left: 1.5rem;
       
      h1 {
+       
        color: $clrSecondary;
      }
 
      p {
-      padding: 1.5rem;
+      padding: 1.5rem 4rem;
 
      }
     
     form {
-      width: 100%;
+      width: 65%;
       padding: 1rem;
     }
   
@@ -355,4 +356,12 @@ canvas {
   }
 
   
+}
+
+@media (max-width: 800px) {
+  .contact {
+  form {
+    width: 90%;
+  }
+}
 }
