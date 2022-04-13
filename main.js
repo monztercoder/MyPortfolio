@@ -126,11 +126,12 @@ async function getData() {
                 </div>
             </div>
             <h2>${data.title}</h2>
-            <p>${data.description}</p>
-            <div class="creds-btm">
-                <div><span class="time">${data.reading_time_minutes}</span> Min. Read</div>
-                <div class="link">Read the full Article on <a href="${data.url}" target="_blank_"> My Blog </a></div>
-            </div>
+            <div class="time">${data.reading_time_minutes} Min. Read</div>
+
+            <p>${data.description}
+            <a href="${data.url}" target="_blank_"> Keep Reading </a>
+            </p>
+            
 
         `
         blogs.appendChild(blog)
@@ -201,7 +202,7 @@ window.addEventListener('scroll', () => {
             const element = document.getElementById(id)
 
             // calculate the heights
-            let position = element.offsetTop - (navHeight - 60) 
+            let position = element.offsetTop - (navHeight + 40) 
             window.scrollTo( 0,position)   
 
         })

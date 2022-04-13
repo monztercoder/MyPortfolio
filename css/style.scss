@@ -178,13 +178,19 @@ canvas {
       }
 
       p {
-        margin-top: 1.5rem;
+        margin-block: 1.5rem;
         padding: 0 2rem;
+        line-height: 1.6;
       }
 
       h2 {
         margin-top: 1.5rem;
         padding: 0 .8rem;
+      }
+
+      .time {
+        text-align: left;
+        margin-left: 3rem;
       }
 
       a {
@@ -198,18 +204,7 @@ canvas {
         }
       }
 
-      .creds-btm {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 2rem;
-        margin: 2rem 0;
-
-        .link {
-          margin-right: .7rem ;
-        }
-        
-      }
+      
     }
   }
   
@@ -226,7 +221,7 @@ canvas {
 
      p {
       padding: 1.5rem 4rem;
-
+      line-height: 1.7;
      }
     
     form {
@@ -296,7 +291,16 @@ canvas {
     bottom: 0;
     color: hsl(210, 55%, 15%);
 
+    p {
+      margin-bottom: .5rem;
+      font-size: 1.4rem;
+    }
 
+    @media (max-width : 500px) {
+      p {
+        font-size: 1.1rem;
+      }
+    }
     .social-icons {
         margin-right: 2rem;
         gap: 2.5rem;
