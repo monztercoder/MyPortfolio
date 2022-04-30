@@ -330,6 +330,10 @@ canvas {
 }
 .main__container .card {
   transform: rotate(8deg);
+  transition: transform 0.4s ease;
+}
+.main__container .card:hover {
+  transform: scale(1.1);
 }
 .main__container .card h2 {
   letter-spacing: 0.1rem;
