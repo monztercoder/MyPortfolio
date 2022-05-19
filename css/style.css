@@ -31,8 +31,7 @@ a i {
 img {
   display: block;
   max-width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 h1,
@@ -74,14 +73,6 @@ input {
   border-radius: 5px;
   padding: 0.5em 1em;
   transition: 0.3s;
-}
-input::-moz-placeholder {
-  font-size: 1.2rem;
-  color: gray;
-}
-input:-ms-input-placeholder {
-  font-size: 1.2rem;
-  color: gray;
 }
 input::placeholder {
   font-size: 1.2rem;
@@ -155,7 +146,29 @@ section {
   display: none;
   position: absolute;
   right: 1rem;
+}
+.nav .toggler .menu {
+  width: 26px;
+}
+.nav .toggler .menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform-origin: 3px 1px;
   transition: all 0.3s linear;
+}
+.nav .toggler .menu span:not(:last-child) {
+  margin-bottom: 5px;
+}
+.nav .toggler .menu.open span:first-child {
+  transform: rotate(45deg);
+}
+.nav .toggler .menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav .toggler .menu.open span:last-child {
+  transform: rotate(-45deg);
 }
 .nav ul {
   width: 50%;
@@ -184,8 +197,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: hsl(214deg, 32%, 51%);
   height: 10px;
 }
@@ -224,11 +236,10 @@ section {
   color: #333;
 }
 
-@supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+@supports (backdrop-filter: blur(1rem)) {
   .mobi-nav {
     background: hsla(0deg, 0%, 100%, 0.1);
-    -webkit-backdrop-filter: blur(1rem);
-            backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
   }
 }
 .header {
@@ -346,9 +357,9 @@ canvas {
 }
 
 .projects {
-  background-color: hsla(209deg, 43%, 16%, 0.7);
+  background: hsla(209deg, 43%, 16%, 0.7);
   flex-direction: column;
-  gap: 3em;
+  gap: 2.5em;
   padding-bottom: 2rem;
   margin-left: 1.5rem;
 }
@@ -420,7 +431,7 @@ canvas {
   background: hsla(209deg, 43%, 16%, 0.7);
   margin: 0 1.5rem;
   flex-direction: column;
-  gap: 3em;
+  gap: 2.5em;
   padding-bottom: 2em;
 }
 .blogs h2 {
@@ -485,6 +496,7 @@ canvas {
 .contact .row {
   width: 100%;
   display: flex;
+  /* From uiverse.io by @adamgiebl */
 }
 .contact .row .input50 {
   width: 50%;
@@ -512,13 +524,32 @@ canvas {
   height: 8rem;
 }
 .contact .row .form-btn {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  margin: auto;
-  font-weight: 700;
   text-transform: uppercase;
+  margin: auto;
+  color: #ffffff;
+  background: hsl(209deg, 78%, 73%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
-.contact .row .form-btn:hover {
-  background: hsl(214deg, 32%, 51%);
+.contact .row .form-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+.contact .row .form-btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+.contact .row .form-btn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+.contact .row .form-btn:hover span {
+  transform: translateX(5em);
+}
+.contact .row .form-btn:active {
+  transform: scale(0.95);
 }
 
 .footer {
@@ -555,8 +586,7 @@ canvas {
 }
 .footer .top-btn {
   font-size: 3.5rem;
-  -webkit-animation: shake 0.3s infinite forwards;
-          animation: shake 0.3s infinite forwards;
+  animation: shake 0.3s infinite forwards;
   cursor: pointer;
 }
 .footer .wave {
@@ -566,15 +596,6 @@ canvas {
   top: 0;
   height: 100%;
   width: 100%;
-}
-
-@-webkit-keyframes shake {
-  0%, 100% {
-    transform: translateY(-8px);
-  }
-  90% {
-    transform: translateY(0);
-  }
 }
 
 @keyframes shake {
@@ -597,4 +618,6 @@ canvas {
   .contact form {
     width: 90%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

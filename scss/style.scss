@@ -1,6 +1,8 @@
+@use "sass:math";
 @import 'variables';
 @import 'defaults';
 @import 'nav';
+
 
 canvas {
     position: fixed;
@@ -69,18 +71,19 @@ canvas {
   // Projects
 
   .projects {
-    background-color: $clrPrimary;
+    background: $clrPrimary;
     flex-direction: column;
-    gap: 3em;
+    gap: 2.5em;
     padding-bottom: 2rem;
     margin-left: 1.5rem;
+    
 
     .project {
       background-color: $white;
       flex-direction: column;
       gap: 1.5em;
       width: 80%;
-      border-radius: $radius / 10;
+      border-radius: math.div($radius , 10);
       color: $textPrimary;
 
       .banner {
@@ -89,10 +92,10 @@ canvas {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center top;
-        border-radius: $radius / 10;
+        border-radius: math.div($radius , 10);
 
         .link {
-          border-radius: $radius / 10;
+          border-radius: math.div($radius , 10);
           background-color: rgba(0, 0, 0, 0.7);
           width: 100%;
           height: 100%;
@@ -155,11 +158,12 @@ canvas {
     background: $clrPrimary;
     margin: 0 1.5rem;
     flex-direction: column;
-    gap: 3em;
+    gap: 2.5em;
     padding-bottom: 2em;
 
-    h2 {
-      padding: 0 .5rem;
+     h2 {
+      padding: 0 .5rem; 
+
     }
 
     .blog {
@@ -167,7 +171,7 @@ canvas {
       height: 80%;
       color: #333;
       background: $white;
-      border-radius: $radius / 10;
+      border-radius: math.div($radius , 10);
 
       .creds {
         margin-top: 1.5rem;
@@ -252,10 +256,10 @@ canvas {
               width: 100%;
               font-family: $font-primary;
               padding: 10px;
-              border-radius: $radius / 10;
+              border-radius: math.div($radius , 10);
               outline: none;
               font-size: 1rem;
-              font-weight: 300;
+              font-weight: 300; 
               margin: 10px 0;
               resize: none;
 
@@ -271,16 +275,42 @@ canvas {
               height: 8rem;
           }
   
-          .form-btn {
-            font-family: $font-primary;
-            margin: auto;
-            font-weight: 700;
-            text-transform: uppercase;
-          
-            &:hover {
-              background: $textPrimary;
-            }
-          }
+          /* From uiverse.io by @adamgiebl */
+.form-btn {
+  text-transform: uppercase;
+  margin: auto;
+  color: $white;
+  background: $clrSecondary;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+ }
+
+  svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  &:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  &:hover span {
+    transform: translateX(5em);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+
+ }
+ 
   
       }
   }

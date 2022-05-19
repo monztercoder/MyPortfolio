@@ -142,9 +142,6 @@ async function getData() {
 
 // Nav and Mobi-Nav
 
-import menu from '/Images/menu.svg'
-import cancel from '/Images/cancel.svg'
-
 // nav and links
 const links = document.querySelectorAll('.nav a')
 const mobileLinks = document.querySelectorAll('.mobi-nav a')
@@ -153,7 +150,7 @@ const mobiNav = document.querySelector('.mobi-nav')
 const navHeight = nav.getBoundingClientRect().height
 
 const toggle = document.querySelector('#btn')
-const toggleIcon = document.querySelector('#btn img')
+const toggleIcon = document.querySelector('.menu')
 const topBtn = document.getElementById('top-btn')
 
 // pointer on active Link
@@ -169,16 +166,17 @@ toggle.onclick = () => {
     mobiNav.classList.toggle('active')
     if (mobiNav.classList.contains('active')) {
 
-        toggleIcon.src = cancel
+        toggleIcon.classList.add('open')
     } else {
-        toggleIcon.src = menu
+        toggleIcon.classList.remove('open')
     }
 }
 
 mobileLinks.forEach( (link) => {
     link.addEventListener('click', () => {
     mobiNav.classList.remove('active')
-    toggleIcon.src = menu
+    // toggleIcon.src = menu
+    toggleIcon.classList.remove('open')
     })
 })
 
