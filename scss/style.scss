@@ -49,8 +49,8 @@ canvas {
             transform: rotate(8deg);
             transition: transform 0.4s ease;
 
-            &:hover {
-              transform: scale(1.1);
+            &:hover, &:focus {
+              transform: scale(.9);
             }
 
             h2 {
