@@ -12,11 +12,12 @@ async function getData() {
     
     data.forEach((data) => {
         
-        const blogs = document.querySelector('.blogs')
+        const blogs = document.querySelector('.blogs .grid')
         const blog = document.createElement('div')
         blog.classList.add('blog')
 
         blog.innerHTML = `
+        
         <img alt="cover image" src="${data.cover_image}">
             <div class="creds flex">
                 <div class="icon"><img src="${data.user.profile_image}" alt="logo"></div>
@@ -26,13 +27,11 @@ async function getData() {
                         <span class="date">${data.readable_publish_date}</span> 2022
                     </div>
                 </div>
-            </div>
-            <h2>${data.title}</h2>
-            <div class="time">${data.reading_time_minutes} Min. Read</div>
-
-            <p>${data.description}
-            <a href="${data.url}" target="_blank_"> Keep Reading </a>
-            </p>
+                </div>
+                <div class="time">${data.reading_time_minutes} Min. Read</div>
+                <h3>${data.title}</h3>
+            <a href="${data.url}" target="_blank_"> Go to Blog </a>
+           
             
 
         `

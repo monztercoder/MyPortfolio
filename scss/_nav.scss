@@ -10,7 +10,7 @@
     
     &.sticky {
     background-color: $white;
-    padding-bottom: .3rem;
+    padding-bottom: .6rem;
 
     a {
 
@@ -119,6 +119,7 @@
 // mobile Navigation
 .mobi-nav {
     position: fixed;
+    min-height: 100vh;
     inset:0 0 0 40%;
     z-index: 90;
     display: none;

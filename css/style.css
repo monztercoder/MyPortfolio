@@ -127,7 +127,7 @@ section {
 }
 .nav.sticky {
   background-color: #ffffff;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.6rem;
 }
 .nav.sticky a {
   color: hsl(214deg, 32%, 51%);
@@ -206,6 +206,7 @@ section {
 
 .mobi-nav {
   position: fixed;
+  min-height: 100vh;
   inset: 0 0 0 40%;
   z-index: 90;
   display: none;
@@ -360,22 +361,35 @@ canvas {
 
 .projects {
   background: hsla(209deg, 43%, 16%, 0.7);
-  flex-direction: column;
-  gap: 2.5em;
   padding-bottom: 2rem;
   margin-left: 1.5rem;
+  padding-inline: 2rem;
+}
+.projects h2 {
+  margin-bottom: 2rem;
+}
+.projects .collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .projects .collage {
+    grid-template-columns: 100%;
+  }
 }
 .projects .project {
+  position: relative;
   background-color: #ffffff;
   flex-direction: column;
-  gap: 1.5em;
-  width: 80%;
   border-radius: 5px;
   color: hsl(214deg, 32%, 51%);
 }
 .projects .project .banner {
   width: 100%;
-  height: 250px;
+  height: 200px;
+  aspect-ratio: 2/1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -406,6 +420,7 @@ canvas {
   color: hsla(209deg, 43%, 16%, 0.7);
 }
 .projects .project .tags {
+  margin-bottom: 2rem;
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
@@ -423,31 +438,46 @@ canvas {
 }
 .projects .project .info {
   font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  padding-inline: 0.7em;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.42);
+  margin-block: 1rem;
 }
 .projects .project .info span {
   color: hsla(209deg, 43%, 16%, 0.7);
-  font-weight: bold;
+}
+.projects .project p {
+  font-size: small;
+  justify-self: flex-end;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .blogs {
   background: hsla(209deg, 43%, 16%, 0.7);
   margin: 0 1.5rem;
   flex-direction: column;
-  gap: 2.5em;
+  gap: 2rem;
   padding-bottom: 2em;
+  padding-inline: 2em;
 }
 .blogs h2 {
   padding: 0 0.5rem;
 }
+.blogs .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 3rem;
+}
 .blogs .blog {
-  width: 80%;
-  height: 80%;
   color: #333;
   background: #ffffff;
   border-radius: 5px;
+  padding-bottom: 0.5rem;
 }
 .blogs .blog .creds {
-  margin-top: 1.5rem;
+  margin-block: 1rem;
   gap: 0.8rem;
   padding-left: 1.4rem;
 }
@@ -457,18 +487,13 @@ canvas {
   border-radius: 50%;
   overflow: hidden;
 }
-.blogs .blog p {
-  margin-block: 1.5rem;
-  padding: 0 2rem;
-  line-height: 1.6;
-}
-.blogs .blog h2 {
-  margin-top: 1.5rem;
-  padding: 0 0.8rem;
-}
 .blogs .blog .time {
   text-align: left;
-  margin-left: 3rem;
+  margin-left: 1rem;
+}
+.blogs .blog h3 {
+  margin-bottom: 1rem;
+  padding: 0 0.8rem;
 }
 .blogs .blog a {
   color: hsl(214deg, 32%, 51%);

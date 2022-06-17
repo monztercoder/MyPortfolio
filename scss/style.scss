@@ -71,24 +71,37 @@ canvas {
   // Projects
 
   .projects {
-    background: $clrPrimary;
-    flex-direction: column;
-    gap: 2.5em;
+    background: $clrPrimary; 
     padding-bottom: 2rem;
     margin-left: 1.5rem;
-    
+    padding-inline: 2rem;
+   
+    h2 {
+      margin-bottom: 2rem;
+    }
 
+  .collage {
+    
+     display: grid;
+     grid-template-columns: repeat(2,minmax(200px, 1fr));
+     grid-gap: 2rem;
+     margin: 0 auto;
+
+     @media (max-width: 900px) {
+        grid-template-columns: 100%;
+     }
+  }
     .project {
+      position: relative;
       background-color: $white;
       flex-direction: column;
-      gap: 1.5em;
-      width: 80%;
       border-radius: math.div($radius , 10);
       color: $textPrimary;
 
       .banner {
         width: 100%;
-        height: 250px;
+        height: 200px;
+        aspect-ratio: 2 / 1;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center top;
@@ -124,6 +137,7 @@ canvas {
       }
 
       .tags {
+        margin-bottom: 2rem;
         display: flex;
         gap: 1em;
         flex-wrap: wrap;
@@ -144,11 +158,23 @@ canvas {
 
       .info {
         font-size: 1.3rem;
+        font-style: italic;
+        font-weight: 500;
+        padding-inline: .7em;
+        text-shadow: 0px 2px 6px rgba(0,0,0,0.42);
+        margin-block: 1rem;
 
         span {
           color: $clrPrimary;
-          font-weight: bold;
+          
         }
+      }
+
+      p {
+        font-size: small;
+        justify-self: flex-end;
+        font-weight: 300;
+        text-transform: uppercase;
       }
     }
   }
@@ -158,48 +184,50 @@ canvas {
     background: $clrPrimary;
     margin: 0 1.5rem;
     flex-direction: column;
-    gap: 2.5em;
+    gap: 2rem;
     padding-bottom: 2em;
+    padding-inline: 2em;
 
      h2 {
       padding: 0 .5rem; 
 
     }
 
+    .grid {
+      
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+     grid-gap: 3rem;
+    }
+
     .blog {
-      width: 80%;
-      height: 80%;
       color: #333;
       background: $white;
       border-radius: math.div($radius , 10);
+      padding-bottom: .5rem;
 
       .creds {
-        margin-top: 1.5rem;
-        gap: .8rem;
-        padding-left: 1.4rem;
+          margin-block: 1rem;
+          gap: .8rem;
+          padding-left: 1.4rem;
+        
+          .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
 
-        .icon {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          overflow: hidden;
-}
-      }
+        }
+        
+        .time {
+          text-align: left;
+          margin-left: 1rem;
 
-      p {
-        margin-block: 1.5rem;
-        padding: 0 2rem;
-        line-height: 1.6;
-      }
-
-      h2 {
-        margin-top: 1.5rem;
+        }
+        h3 {
+        margin-bottom: 1rem;
         padding: 0 .8rem;
-      }
-
-      .time {
-        text-align: left;
-        margin-left: 3rem;
       }
 
       a {
