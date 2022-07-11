@@ -1,11 +1,8 @@
 
 import spaceImg from './Images/space.jpg'
-// import html from '/Images/html5.png'
-// import css from '/Images/css.png'
-// import js from '/Images/js.png'
-// import react from '/Images/react.png'
-// import node from '/Images/nodejs.png'
-// import github from '/Images/Octocat.png'
+import earth from '/Images/earth.jpg'
+import crust from '/Images/crust.jpg'
+
 import * as THREE from 'three'
 
 const scene = new THREE.Scene(); // the container where everything happens
@@ -33,12 +30,15 @@ camera.position.setZ(25); // moving the camera close to the user
 renderer.render(scene,camera)
 
 // const geometry = new THREE.polygonGeometry(10,3,16,100)
-const geometry = new THREE.DodecahedronGeometry(14)
+const geometry = new THREE.SphereBufferGeometry(14)
 
 // You can create your own material by WebGl library.
 // basic material requires no light source while light bounces of a StandardMaterial to give it good lighting effect
 
-const material = new THREE.MeshStandardMaterial( { color: 'rgb(132, 188, 240)', wireframe:true} )
+const earthTexture = new THREE.TextureLoader().load(earth)
+const crustTexture = new THREE.TextureLoader().load(crust)
+
+const material = new THREE.MeshStandardMaterial( { map : earthTexture, normalMap : crustTexture} )
 
 const polygon = new THREE.Mesh( geometry, material)
 polygon.position.set(10,-10,-10)
@@ -88,9 +88,9 @@ export function moveCamera() {
 export function animate() {
 
   // animating by changing the rotation of our polygon shape infintely in a recursive func.
-  polygon.rotation.x += 0.01;
+  polygon.rotation.x += 0.001;
   polygon.rotation.y += 0.005;
-  polygon.rotation.z += 0.01;
+  polygon.rotation.z += 0.001;
 
   // controls.update()
 
